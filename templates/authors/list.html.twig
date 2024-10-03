@@ -1,0 +1,26 @@
+{% if authors is not empty%}
+<table border="2">
+    <tr>
+        <td>id</td>
+        <td>username</td>
+        <td>nb books</td>
+        <td>image</td>
+        <td>Action</td>
+    </tr>
+    {% for author in authors%}
+<tr>
+    
+    <td>{{author.id}}</td>
+    <td>{{author.username |upper}}</td>
+
+    <td> <img src="{{author.picture}}"></td>
+    <td>{{author.nb_books}}</td>
+    <td><a href="{{path('abc',{'idt':author.id})}}"> detail</a></td>
+</tr>
+{% endfor %}
+</table>
+{%else%}
+table empty
+{%endif%}
+
+nb authors: {{authors | length}}<br>

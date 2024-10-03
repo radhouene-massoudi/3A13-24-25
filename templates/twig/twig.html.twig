@@ -1,0 +1,25 @@
+
+{#
+    {% set x=0%}
+    {{x}}
+    {{a | upper |lower}}
+    {{dump(auth)}}
+    length : {{auth|length}}
+    {% for a in auth%}
+    {{a.id}}
+    {{a.username}}
+    {% if a.nb_books !=0%}
+    <input type="submit" value="detail"><br>
+    {%endif%}
+    {% endfor %}
+    #}
+    {% set nbBooks=0%}
+    {% for author in authors%}
+    {% set nbBooks=author.nb_books+nbBooks%}
+    {% endfor %}
+    {{nbBooks}}
+    
+    {% if students is empty%}
+    
+    msgggggg
+    {% endif %}
